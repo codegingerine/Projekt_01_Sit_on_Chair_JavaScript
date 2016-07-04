@@ -1,0 +1,1 @@
+# Projekt_01_Sit_on_Chair_JavaScript
