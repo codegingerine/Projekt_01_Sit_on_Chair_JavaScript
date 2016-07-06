@@ -157,9 +157,7 @@ nav ol > li > ul {
 	position: relative;
 	z-index: 9;
 }
-nav ol :hover > ul {
-	display: block;
-}
+
 /*--- dropdown menu list ---*/
 nav ol > li > ul > li> a {
 	font-size: 14px;

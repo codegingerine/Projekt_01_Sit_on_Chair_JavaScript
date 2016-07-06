@@ -1,17 +1,26 @@
 document.addEventListener("DOMContentLoaded", function(){
 
 
-// ----- Slider -----
+// ----- Show Element - DropDown menu -----
+var listElementsVisible = document.querySelectorAll('nav ol > li > a ');
 
+	for (var i = 0; i < listElementsVisible.length; i++) {
+		listElementsVisible[i].addEventListener('mouseover', function(show) {
+			this.nextElementSibling.style.display = 'block';
+		});
+		listElementsVisible[i].addEventListener('mouseout', function(hide) {
+			this.nextElementSibling.style.display = 'none';
+		});
+	}	
+
+// ----- Slider -----
 var nextSlaidBtn = document.querySelector('.slider-btn-right');
 var sliderPhotos = document.querySelectorAll('.slider-photo li');
 var prevSlideBtn = document.querySelector('.slider-btn-left');
 
 var index = 0;
-	sliderPhotos[index].classList.add('visible'); 
+sliderPhotos[index].classList.add('visible'); 
 	nextSlaidBtn.addEventListener("click", function(event) {
-		var counter = 0;
-		var counterValue = counter + 1;      
 		sliderPhotos[index].classList.remove('visible');
 
 		if (index === sliderPhotos.length-1) {
@@ -33,14 +42,6 @@ var index = 0;
 	sliderPhotos[index].classList.add('visible');
 	});
 
-// ----- Show Element - DropDown menu -----
-var dropDownMenu = document.querySelectorAll('nav ol > li > ul');
-	for (var i = 0; i < dropDownMenu.length; i++) {
-		dropDownMenu[i].addEventListener('mouseup', function(showElement) { 
-			this.style.display = 'block';
-		});
-	}	
-
 // ----- Hide Element ----- 
 var bgTransparent = document.querySelectorAll('.bg-transparent');
 	for (var i = 0; i < bgTransparent.length; i++) {
@@ -48,5 +49,7 @@ var bgTransparent = document.querySelectorAll('.bg-transparent');
 			this.style.display = 'none';
 		});
 	}
+
+
 
 });
