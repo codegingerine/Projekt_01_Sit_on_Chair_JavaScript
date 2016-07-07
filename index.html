@@ -213,10 +213,100 @@
 						<button> Dołącz </button>
 					</a>
 				</div>
-
+				<div class="div-clear"></div>
 			</div>
 		</div>
 	</section>
+
+
+
+
+<!-- ===== Section Form Chair Choice ===== -->
+	<section class="application ">
+    	<div class="container">
+			<div class="row">
+				<div>
+					<h3 class="section-title title-left">
+						Skomponuj swoje krzesło
+						<div class="line-large"></div>
+					</h3>
+					<h3 class="section-title title-right">
+						Podsumowanie
+						<div class="line-large"></div>
+					</h3>
+					<div class="div-clear"></div>
+				</div>
+		        <div class="float-col-3 choice_part">
+		            <div class="form">
+		                <div class="drop_down_list">
+		                    <span class="list_label">Wybierz rodzaj</span>
+		                    <span class="list_arrow"></span>
+		                    <ul class="list_panel">
+		                        <li>Clair</li>
+		                        <li>Margarita</li>
+		                        <li>Selena</li>
+		                    </ul>
+		                </div>
+		                <div class="drop_down_list">
+		                    <span class="list_label">Wybierz kolor</span>
+		                    <span class="list_arrow"></span>
+		                    <ul class="list_panel">
+		                        <li>Czerwony</li>
+		                        <li>Czarny</li>
+		                        <li>Pomarańczowy</li>
+		                    </ul>
+		                </div>
+		                <div class="drop_down_list">
+		                    <span class="list_label">Wybierz materiał</span>
+		                    <span class="list_arrow"></span>
+		                    <ul class="list_panel">
+		                        <li>Tkanina</li>
+		                        <li>Skóra</li>
+		                    </ul>
+		                </div>
+		                <div class="checkbox check-box">
+		                    <input type="checkbox" id="transport" data-transport-price="200">
+		                    <label for="transport">Transport</label>
+		                </div>
+		                <!--<div class="checkbox"></div>-->
+		                <!--<span class="list_label inline_text">Transport</span>-->
+		            </div>
+		        </div>
+
+		        <div class="float-col-3 float-col-3-center image_part">
+		            <img src="images/red_chair.png">
+		        </div>
+
+		        <div class="float-col-3 summary_part">
+
+
+		            <div class="summary_panel">
+		                <div class="panel_left">
+		                    <h4 class="title">Twój fotel</h4>
+		                    <span class="color"></span>
+		                    <span class="pattern"></span>
+		                    <span class="transport"></span>
+		                </div>
+		                <div class="panel_right">
+		                    <h4 class="title value"></h4>
+		                    <span class="color value"></span>
+		                    <span class="pattern value"></span>
+		                    <span class="transport value"></span>
+		                </div>
+		                <div class="sum_label">SUMA</div>
+		                <div class="sum"><strong></strong></div>
+		            </div>
+		            <a href="" class="green_button">Zamawiam</a>
+		        </div>
+    		</div>
+		</div>
+	</section>
+
+
+
+
+
+
 
 <!-- ===== Section Contact ===== -->
 	<section id="contact">
@@ -231,9 +321,9 @@
 				<div id="contact-left" class="float-col-2a">
 					<form class="formSend" name="contact-us">
 						<label for="nameData"></label>
-						<input type="text" id="nameData" placeholder="Imię">
+						<input type="text" id="nameData" name="name" placeholder="Imię">
 						<label for="emailData"></label>
-						<input type="email" id="emailData" placeholder="email">
+						<input type="email" id="emailData" name="email" placeholder="email">
 						<label for="message"></label>
 						<textarea rows="10" cols="30" id="messages" placeholder="Wiadomość"></textarea>
 					</form>
