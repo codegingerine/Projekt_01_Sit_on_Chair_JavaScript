@@ -53,54 +53,25 @@ var bgTransparent = document.querySelectorAll('.bg-transparent');
 
 
 // ----- Application options ----- 
-
 var appArrows = document.querySelectorAll('.list_arrow');
-// console.log(appArrows);
 
-//v1 po dodaniu drugiegi eventu, nic nie działa
 	for (var i = 0; i < appArrows.length; i++) {
 		appArrows[i].addEventListener('click', function(show) {
 			this.nextElementSibling.style.display = 'block';	
+
+		for (var i = 0; i < appArrows.length; i++) {
+			appArrows[i].addEventListener('click', function(hide) {
+     		var list = this.nextElementSibling; // cache element
+     		if ( list.style.display != 'none' &&  list.style.display != "") { //spr. czy nie jest też pusty
+       		list.style.display = 'none';
+     		}	else {
+      		list.style.display = 'block';
+     		}
+			});
+		};
 		});
+	};	
 
-		// appArrows[i].addEventListener('click', function(hide) {
-		// 	this.nextElementSibling.style.display = 'none';
-		// });	
-
-	}	
-
-
-//v 2 - tylko jeden element reaguje na oba eventy
-
-	// for (var i = 0; i < appArrows.length; i++) {
-	// 	appArrows[i].addEventListener('click', function(show) {
-	// 		this.nextElementSibling.style.display = 'block';	
-
-	// 		for (var i = 0; i < appArrows.length; i++) {
-	// 			appArrows[i].addEventListener('click', function(hide) {
-	// 				this.nextElementSibling.style.display = 'none';
-	// 			});	
-	// 		}		
-		
-	// 	});
-	// }	
-
-
-// v.3 drugi event nie działa
-
-	// for (var i = 0; i < appArrows.length; i++) {
-	// 	appArrows[i].addEventListener('click', function(show) {
-	// 		if (this.nextElementSibling.style.display = 'none') {
-	// 		this.nextElementSibling.style.display = 'block';
-	// 		} else {
-	// 			this.nextElementSibling.style.display = 'none';
-	// 		}
-	// 	});
-	// }	
-
-
-
-	
 
 
 
