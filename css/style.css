@@ -35,7 +35,7 @@
 	margin: 0;
 	padding: 0;
 	box-sizing: border-box;
-	font-family: 'Raleway';
+	font-family: 'Raleway', Arial, Tahoma, sans-serif;
 	color: #828282;
 }
 html, body {
@@ -88,17 +88,67 @@ nav {
 	background: rgba(255,255,255,1);
 	background: linear-gradient(to bottom, rgba(255,255,255,1) 0%, rgba(255,255,255,1) 6%, rgba(246,246,246,1) 63%, rgba(189,189,189,1) 100%);
 }
-#offer, #prices, #contact {
+/*--- Sections all - width ---*/
+#offer, #prices, .application, #contact {
 	width: 100%;
+}
+/*--- Sections grey background  ---*/
+#prices, .application {
+	background-color: #f1f1f1;
+	padding-top: 30px;
+	padding-bottom: 30px;
+}
+
+/*===== Grid - 3 columns (float) =====*/
+.float-col-3 {
+	position: relative;
+	float: left;
+	width: 32%;
+}
+.float-col-3-center {
+	margin-right: 19px;
+	margin-left: 19px;
 }
 .div-clear {
 	clear: both;
 }
+/*===== Grid - 2 columns 50%/50% (float) =====*/
+.float-col-2 {
+	position: relative;
+	float: left;
+	width: 50%;
+	height: 550px;
+}
+/*===== Grid - 2 columns 60%/30% (float) =====*/
+.float-col-2a {
+	position: relative;
+	float: left;
+	width: 60%;
+}
+.float-col-2b {
+	position: relative;
+	float: left;: 30px;
+	width: 40%;
+	height: 350px;
+}
 
-/*===== Various=====*/
+/*--- titles of sections + large green line ---*/
+.section-title {
+	font-size: 18px;
+	text-transform: uppercase;
+}
+.line-large {
+	width: 300px;
+	height: 6px;
+	background-color: #24baa0;
+	margin-bottom: 40px;
+	margin-top: 8px;
+}
+
+/*===== Various =====*/
 
 .green-word {
-	color: #22b89d;
+	color: #24baa0;
 	font-weight: bold;
 }
 a {
@@ -112,13 +162,23 @@ button {
 	margin: 0 auto;
 	border: none;
 	border-radius: 7px;
-	background-color: #22b89d;
+	background-color: #27c7ab;
 	color: #ffffff;
 	text-transform: uppercase;
 }
 button:hover {
 	text-decoration: underline;
 }
+/*.forms-box {
+	width: 95%;
+	height: 55px;
+	font-size: 21px;
+	border: 1px solid #24baa0;
+}
+.forms-content {
+	margin-bottom: 20px;
+	padding-left: 20px;
+}*/
 
 /*===== Section Nav =====*/
 
@@ -147,7 +207,7 @@ nav ol > li > a {
 	font-size: 14px;
 	text-transform: uppercase;
 }
-/*--- dropdown menu: display none - display block ---*/
+/*--- DropDown menu lists ---*/
 nav ol > li > ul {
 	list-style-type: none;
 	padding:0;
@@ -157,19 +217,17 @@ nav ol > li > ul {
 	position: relative;
 	z-index: 9;
 }
-
-/*--- dropdown menu list ---*/
 nav ol > li > ul > li> a {
 	font-size: 14px;
 }
 nav ol > li > ul > li {
 	background-color: black;
-	position: relative; /*żeby nie chował się ponizej pod inne elementy na stronie + z-index*/
+	position: relative; /*to keep it over other elements while scrolling + z-index*/
 	z-index: 100;
 	height: 33px;
 	line-height: 33px;
 }
-/*--- dropdown menu - triangle ---*/
+/*--- DropDown menu - triangle ---*/
 .nav-rectangle-bg {
 	position: relative;
 	width: 100%;
@@ -191,13 +249,6 @@ nav ol > li > ul > li {
 
 /*===== Section Slider =====*/
 
-/*--- section with 2 columns (float) ---*/
-.float-col-2 {
-	position: relative;
-	float: left;
-	width: 50%;
-	height: 550px;
-}
 /*--- slider buttons/arrows ---*/
 .slider-btn {
 	position: absolute;
@@ -206,7 +257,7 @@ nav ol > li > ul > li {
 .slider-btn-left, .slider-btn-right {
 	display: inline-block;
 	background-color: transparent;
-	color: #22b89d;
+	color: #24baa0;
 	font-size: 85px;
 }
 .slider-btn-left {
@@ -218,18 +269,19 @@ nav ol > li > ul > li {
 }
 .slider-btn-left:hover, .slider-btn-right:hover  {
 	text-decoration: none;
+	color: #e6005c;
 }
-/*--- slider photo ---*/
-.slider-photo ul {
+/*--- slider photos ---*/
+.slider-photo > ul {
 	list-style-type: none;
 }
-.slider-photo li {
+.slider-photo > ul > li {
 	display: none;
 }
-.slider-photo .visible {
+.slider-photo .visible {	/*class visible for JavaScrip*/
 	display: inline-block;
 }
-.slider-photo img {
+.slider-photo > ul > li > img {
 	position: relative;
 	width: 110%;
 	top: 100px;
@@ -261,21 +313,11 @@ nav ol > li > ul > li {
 
 /*===== Section Offer =====*/
 
-/*--- section with 3 columns (float) ---*/
-.float-col-3 {
-	position: relative;
-	float: left;
-	width: 32%;
-}
-.float-col-3-center {
-	margin-right: 19px;
-	margin-left: 19px;
-}
 /*--- Photo Box  ---*/
 .offer-photo {
 	width: 100%;
 }
-/*--- box titles + ornaments ---*/
+/*--- Box titles + ornaments ---*/
 .bg-transparent {
 	position: absolute;
 	bottom: 19px;
@@ -291,14 +333,14 @@ nav ol > li > ul > li {
 .line-small {
 	width: 148px;
 	height: 6px;
-	background-color: #22b89d;
+	background-color: #24baa0;
 	margin-top: 2px;
 }
 .CAPS {
 	text-transform: uppercase;
 	color: #000000;
 }
-/*--- text box ---*/
+/*--- Text Box ---*/
 .offer-text {
 	border: 1px solid #e4dada;
 	padding: 15px 10px 15px 10px;
@@ -313,30 +355,12 @@ nav ol > li > ul > li {
 
 /*===== Section Prices =====*/
 
-#prices {
-	background-color: #f1f1f1;
-	padding-top: 30px;
-	padding-bottom: 30px;
-}
 .prices-box {
 	height: 450px;
 	border: 1px solid #c2c2c2;
 	background-color: #f9f9f9;
- 	margin-top: 40px;
+ 	margin-top: 16px;
 }
-/*--- titles of sections + large green line ---*/
-.section-title {
-	font-size: 18px;
-	text-transform: uppercase;
-}
-.line-large {
-	width: 329px;
-	height: 6px;
-	background-color: #22b89d;
-	margin-bottom: 16px;
-	margin-top: 8px;
-}
-
 /*--- ornaments - circles ---*/
 .circle-big {
 	position: absolute;
@@ -345,7 +369,7 @@ nav ol > li > ul > li {
 	top: -32px;
 	left: 0;
 	right: 0;
-	margin: 0 auto; /* left 0 right 0 kotwiczą element, margin, auto środkuje ! */
+	margin: 0 auto; /* left:; 0 right:; 0 to anchor the item, margin: auto to center ! */
 	border-radius: 50%;
 	border: 1px solid #c2c2c2;
 	background-color: white;
@@ -357,14 +381,14 @@ nav ol > li > ul > li {
 	top: 0;
 	left: 0;
 	right: 0;
-	bottom: 0; /* zagnieżenie kółka wyzerowane wartości, żeby wyśrodkować w divie w którym jest zagnieżdżone + margin: auto*/
+	bottom: 0; /* top, left, right, bottm given 0 value, so that the small circle gets centered within the dive it is embedded in + margin: auto*/
 	margin: auto;
 	border-radius: 50%;
 	background-color: #c2c2c2;
 }
 .prices-box h3 {
 	text-transform: uppercase;
-	color: #22b89d;
+	color: #24baa0;
 	font-size: 20px;
 	text-align: center;
 	padding-top: 25px;
@@ -381,7 +405,7 @@ nav ol > li > ul > li {
 	position: relative;
 	width: 130px;
 	height: 130px;
-	margin: 0 auto; /* left right kotwiczą element, margin: auto środkuje !!!!!! */
+	margin: 0 auto;
 	border-radius: 50%;
 	border: 2px solid #c2c2c2;
 	background-color: #ffffff;
@@ -412,7 +436,7 @@ nav ol > li > ul > li {
 	}
 .prices-service >:nth-child(odd) {
 		background-color: #e4e4e4;
-	} /* selektor dziecka > konieczny bo inaczej liczy wszystkie divy w kontenerze zbiorczym*/
+	} /* child selector neccessary > or else all div's within the main contener are counted*/
 #prices button {
 	width: 117px;
 	height: 36px;
@@ -421,12 +445,12 @@ nav ol > li > ul > li {
 }
 /*--- :hover ---*/
 .box-hover:hover {
-	border: 1px solid #22b89d;
-	background-color: #22b89d;
+	border: 1px solid #24baa0;
+	background-color: #24baa0;
 }
 .box-hover:hover .circle-big {
-	border: 2px solid #22b89d;
-	background-color: #22b89d;
+	border: 2px solid #24baa0;
+	background-color: #24baa0;
 }
 .box-hover:hover .circle-small {
 	background-color: #f9f9f9;
@@ -435,21 +459,21 @@ nav ol > li > ul > li {
 	color: #ffffff;
 }
 .box-hover:hover .circle-large {
-	border: 2px solid #22b89d;
+	border: 2px solid #24baa0;
 	background-color: #f9f9f9;
 }
 .box-hover:hover .circle-large p {
-	color: #22b89d;
+	color: #24baa0;
 }
 .box-hover:hover .circle-large span {
-	color: #22b89d;
+	color: #24baa0;
 }
 .box-hover:hover .circle-large sup {
-	color: #22b89d;
+	color: #24baa0;
 }
 .box-hover:hover button {
 	background-color: #ffffff;
-	color: #22b89d;
+	color: #24baa0;
 }
 .box-hover:hover .prices-service >:nth-child(even) {
 	background-color: #f1f1f1;
@@ -458,23 +482,190 @@ nav ol > li > ul > li {
 	background-color: #ffffff;
 }
 
+/*===== Section Form Chair Choice =====*/
+
+/*--- Titles ---*/
+.title-left {
+	float: left;
+}
+.title-right {
+	float: right;
+	text-align: right;
+}
+.drop_down_list {
+	border:1px solid #8de0d2;
+	width: 280px;
+	height: 48px;
+	background-color: white;
+	margin-bottom: 18px;
+	padding: 14px 12px;
+	position: relative;
+}
+.list_label {
+	font-size: 20px;
+	color: #e2e2e2;
+}
+/* checkbox */
+.checkbox {
+	position: relative;
+	padding: 30px 30px 30px 0;
+}
+.checkbox input {
+	display: block;
+	opacity: 0;
+	height: 48px;
+	position: absolute;
+	width: 48px;
+	cursor: pointer;
+}
+.checkbox label {
+	display: block;
+	padding-left: 50px;
+	position: relative;
+	font-size: 24px;
+	color: #cecece;
+	line-height: 120%;
+	padding-top: 10px;
+	cursor: pointer;
+}
+.checkbox label::before, .checkbox label::after {
+	border: 1px solid #27c7ab;
+	background-color: #ffffff;
+	content: "";
+	display: block;
+	left: 0;
+	height: 35px;
+	position: absolute;
+	width: 35px;
+	top: 0;
+}
+.checkbox label::after {
+	background: url("data:image/svg+xml;charset=US-ASCII,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20xmlns%3Axlink%3D%22http%3A//www.w3.org/1999/xlink%22%20preserveAspectRatio%3D%22xMidYMid%22%20width%3D%2233.875%22%20height%3D%2233%22%20viewBox%3D%220%200%2033.875%2033%22%3E%0A%20%20%3Cpath%20d%3D%22M9.470%2C15.209%20L14.061%2C24.104%20C14.061%2C24.104%2021.522%2C6.026%2033.287%2C-0.000%20C33.000%2C4.304%2031.852%2C8.035%2033.861%2C12.626%20C28.696%2C13.774%2018.078%2C26.687%2014.635%2C33.000%20C9.756%2C26.974%204.017%2C22.382%20-0.000%2C20.948%20L9.470%2C15.209%20Z%22%20fill%3D%22%2327c7ab%22/%3E%0A%3C/svg%3E%0A") no-repeat center;
+	border: 0;
+	display: none;
+}
+.checkbox input:checked + label::after {
+	display: block;
+}
+/*.active {
+	background: url('../images/form_ok.jpg');
+	width: 48px;
+	height: 40px;
+}
+.inline_text {
+	display: inline-block;
+	width: 228px;
+	vertical-align: top;
+	margin-top: 30px;
+	margin-left: 15px;
+	color: #aeaeae;
+}
+.image_part img{
+	margin-top: 44px;
+}
+*/
+.summary_panel {
+	background-color: white;
+	width:100%;
+	height:195px;
+	padding:15px;
+}
+.summary_part button {
+	width: 200px;
+	height: 50px;
+	top: 220px;
+	font-size: 24px;
+	margin-left: 65px;
+}
+.panel_left {
+	display: inline-block;
+	width: 185px;
+	vertical-align: top;
+	padding-bottom:10px;
+	border-bottom:1px solid #e7e7e7;
+	height: 135px;
+}
+.panel_right {
+	display: inline-block;
+	width: 100px;
+	border-left:1px solid #e7e7e7;
+	text-align: right;
+	vertical-align: top;
+	padding-bottom:10px;
+	border-bottom:1px solid #e7e7e7;
+	height: 135px;
+}
+.panel_left h4 , .panel_right h4 {
+	color: #24baa0;
+	font-size: 23px;
+}
+.panel_left span {
+	margin-top: 15px;
+	font-size: 20px;
+	color: #5b5a5a;
+	display: block;
+}
+.panel_right span {
+	display: block;
+	font-size: 20px;
+	color: #24baa0;
+	margin-top: 15px;
+}
+.sum_label{
+	display: inline-block;
+	width: 185px;
+	margin-top: 10px;
+	font-size: 22px;
+	color: #5b5a5a;
+}
+.sum {
+	display: inline-block;
+	width: 100px;
+	text-align: right;
+	margin-top: 10px;
+	font-size: 22px;
+	color: #24baa0;
+}
+.list_arrow {
+	width: 0;
+	height: 0;
+	border-left: 15px solid transparent;
+	border-right: 15px solid transparent;
+	border-top: 15px solid #24baa0;
+	display:block;
+	position: absolute;
+	right: 14px;
+	top: 15px;
+	cursor: pointer;
+}
+.list_panel {
+	background-color: white;
+	border: 1px solid #ccc;
+	width: 280px;
+	padding-left: 15px;
+	padding-bottom: 10px;
+	list-style: none;
+	margin: 0;
+	left: 0px;
+	z-index: 2;
+	position: absolute;
+	top: 46px;
+	display:none;
+}
+.list_panel li {
+	margin-top:10px;
+	cursor: pointer;
+	font-size: 16px;
+}
+/*.title {
+	height: 30px;
+}*/
+
 /*===== Section Contact =====*/
 
-/*--- section with 2 columns(b) (float) ---*/
-.float-col-2a {
-	position: relative;
-	float: left;
-	width: 60%;
-}
-.float-col-2b {
-	position: relative;
-	float: left;
-	width: 40%;
-	height: 350px;
-}
 /*--- contact form ---*/
 form[name=contact-us] {
-	margin-top: 40px;
+	margin-top: 16px;
 }
 input {
 	margin-bottom: 20px;
@@ -484,13 +675,13 @@ input[type=text], input[type=email] {
 	width: 95%;
 	height: 55px;
 	font-size: 21px;
-	border: 1px solid #22b89d;
+	border: 1px solid #8de0d2;
 }
 textarea {
 	width: 95%;
 	height: 160px;
 	font-size: 22px;
-	border: 1px solid #22b89d;
+	border: 1px solid #8de0d2;
 	padding-left: 18px;
 	padding-top: 10px;
 }
@@ -526,7 +717,7 @@ textarea {
 	content: '';
 	width: 46px;
 	height: 43px;
-	border: 1px solid #22b89d;
+	border: 1px solid #24baa0;
 	position: absolute;
 	left: -55px;
 }
@@ -541,7 +732,7 @@ textarea {
 	margin: 0 auto;
 	border: 0;
 	border-radius: 8px;
-	background-color: #22b89d;
+	background-color: #27c7ab;
 	color: #ffffff;
 	font-weight: bold;
 	text-transform: uppercase;
