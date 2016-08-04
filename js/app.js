@@ -1,7 +1,7 @@
 document.addEventListener("DOMContentLoaded", function(){
 
 
-	// ----- DropDown menu - Show/Hide Element -----
+	// ===== DropDown menu - Show/Hide Element ========================
 	var listElementsVisible = document.querySelectorAll('nav ol > li');
 
 	function DropdownMenu() {
@@ -16,7 +16,7 @@ document.addEventListener("DOMContentLoaded", function(){
 	};
 	DropdownMenu();
 
-	// ----- Section Slider -----
+	// ===== Section Slider ========================
 	var nextSlaidBtn = document.querySelector('.slider-btn-right');
 	var sliderPhotos = document.querySelectorAll('.slider-photo li');
 	var prevSlideBtn = document.querySelector('.slider-btn-left');
@@ -45,55 +45,59 @@ document.addEventListener("DOMContentLoaded", function(){
 	};
 	mainSlider();
 
-	// ----- Section Offer - Hide title bars ----- 
+	// ===== Section Offer - change title bars on mouse move ======================== 
 	var bgTransparent = document.querySelectorAll('.bg-transparent');	//transparent bars with box title
 
-	function titleBarsHide() {
+	function titleBarsChange() {
 		for (var i = 0; i < bgTransparent.length; i++) {
 			bgTransparent[i].addEventListener('mouseover', function(hideElement) { 
-				this.style.display = 'none';
+				this.style.backgroundColor = '#0ea58b';
+			});
+			bgTransparent[i].addEventListener('mouseleave', function(hideElement) { 
+				this.style.backgroundColor = 'rgba(236, 236, 236, 0.4)';
 			});
 		};
 	};
-	titleBarsHide();
+	titleBarsChange();
 
-	// ----- Section Buy Chair Form ----- 
+	// ===== Section Buy Chair Form ========================
 	var appArrows = document.querySelectorAll('.list_arrow');
 	var categories = document.querySelectorAll(".list_panel li"); //li categories
-	console.log(categories)
+	var categoryList = document.querySelectorAll(".list_panel"); //ul with categories
 
-	// Category DropDown Lists 
+
+	// Category DropDown Lists - Show/Hide on click
 	function categoriesLists() {
 		for (var i = 0; i < appArrows.length; i++) {
-			// Show category list on arrow click
+			// Show/Hide categoryList on arrow click
 			appArrows[i].addEventListener('click', function(show) { 
-				var list = this.nextElementSibling; 		// ul - category list, cache element	
-				list.style.display = 'block';	
-				// Hide category list on arrow click
-				for (var i = 0; i < appArrows.length; i++) {
-					appArrows[i].addEventListener('click', function(hide) {
-				   		if ( list.style.display != 'none' &&  list.style.display != "") { 
-				   			list.style.display = 'none';
-				   		} else {
-				   			list.style.display = 'block';
-				   		};
-					});
+				var list = this.nextElementSibling; 		// ul - categoryList, cache element
+				if (list.style.display !== 'block') {
+					list.style.display = 'block';	
+				} else {
+					list.style.display = 'none';
 				};
+					for (var i = 0; i < categories.length; i++) {
+						// Hide categoryList on category click
+						categories[i].addEventListener('click', function(hide) { 
+							this.parentElement.style.display = 'none';
+						});
+					};
+
+					for (var i = 0; i < categoryList.length; i++) {
+						// Hide categoryList on mouseleave
+						categoryList[i].addEventListener('mouseleave', function(hide) { 
+							this.style.display = 'none';
+						});
+					};
 			});
 		};
-		
-		/*DO POPRAWY - 	przy kliknięciu w kolejną strzałke rozwijają się też listy ul powyżej
-		// Hide category list on clicking a chosen category item inside the list 
-		for (var i = 0; i < categories.length; i++) {
-			categories[i].addEventListener('click', function(hide) {
-				this.parentElement.style.display = 'none';
-			});	
-		};*/
 	};
 	categoriesLists();
 
 
-	// category form
+
+	// Category form - choosing chair options
 	var listArrow = document.querySelectorAll(".list_arrow");
 	// price table - names
 	var chair = document.querySelector(".title");
@@ -133,7 +137,6 @@ document.addEventListener("DOMContentLoaded", function(){
 	var patternPrice = 0;
 	var transportPrice = 0;
 
-
 	//VERSION 1
 	function endPrices() {
 		for (var i = 0; i < categories.length; i++) {
@@ -163,18 +166,18 @@ document.addEventListener("DOMContentLoaded", function(){
 				// checkbox - place transport price in price table if checked + total price
 				checkboxInput.addEventListener("click", function(event) {
 					if (checkboxInput.checked === true) {
-							transport.innerHTML = checkboxLabel.innerHTML;   
-							transportPrice = parseInt(this.dataset.price, 10);  			
-							transportValue.innerHTML = transportPrice + ' pln'; 
+						transport.innerHTML = checkboxLabel.innerHTML;   
+						transportPrice = parseInt(this.dataset.price, 10);  			
+						transportValue.innerHTML = transportPrice + ' pln'; 
 					} else {
-		                transport.innerHTML = "";
-		           		transportValue.innerHTML = "";
-		       			transportPrice = 0;
-		        	};
-		        	// total price if checkbox checked
-		        	sum = chairPrice + colorPrice + patternPrice + transportPrice;
+						transport.innerHTML = "";
+						transportValue.innerHTML = "";
+						transportPrice = 0;
+					};
+					// total price if checkbox checked
+					sum = chairPrice + colorPrice + patternPrice + transportPrice;
 					sumDiv.innerHTML = sum + ' pln';
-        		});
+				});
 				// total price in price table if checkbox not checked
 				sum = chairPrice + colorPrice + patternPrice;
 				sumDiv.innerHTML = sum + ' pln';
@@ -202,22 +205,22 @@ document.addEventListener("DOMContentLoaded", function(){
 					sumDiv.innerHTML = chairPrice  + ' pln';
 				});	
 			// place the chosen color price in price table + total price
-	       	} if (i>2 && i <= 5)	{
-	         	categories[i].addEventListener("click", function(event) {
+			} if (i>2 && i <= 5)	{
+				categories[i].addEventListener("click", function(event) {
 					color.innerHTML = this.innerHTML;   
 					colorPrice = parseInt(this.dataset.price, 10);	  			
 					colorValue.innerHTML = colorPrice + ' pln'; 
 					sumDiv.innerHTML = chairPrice + colorPrice + ' pln';
-	    		});	      
+				});	      
 			// place the chosen pattern price in price table + total price		
-	       	} else if (i>5 && i <= 7) {
-	       		categories[i].addEventListener("click", function(event) {
+			} else if (i>5 && i <= 7) {
+				categories[i].addEventListener("click", function(event) {
 					pattern.innerHTML = this.innerHTML;   
 					patternPrice = parseInt(this.dataset.price, 10);	  			
 					patternValue.innerHTML = patternPrice + ' pln'; 
 					sumDiv.innerHTML = chairPrice + colorPrice + patternPrice + ' pln';
-	    		});	 
-	       	}
+				});	 
+			}
 			// checkbox - place transport price in price table if checked
 			checkboxInput.addEventListener("click", function(event) {
 				if (checkboxInput.checked === true) {
@@ -226,14 +229,14 @@ document.addEventListener("DOMContentLoaded", function(){
 					transportValue.innerHTML = transportPrice + ' pln'; 
 				} 
 				else {
-	                transport.innerHTML = "";
-	           		transportValue.innerHTML = "";
-	       			transportPrice = 0;
-	        	};
-	        	// total price in price table if checked
-	        	sum = chairPrice + colorPrice + patternPrice + transportPrice;
+					transport.innerHTML = "";
+					transportValue.innerHTML = "";
+					transportPrice = 0;
+				};
+				// total price in price table if checked
+				sum = chairPrice + colorPrice + patternPrice + transportPrice;
 				sumDiv.innerHTML = sum + ' pln';
-        	});	
+			});	
 		};
 	};
 	endPrices();

@@ -3,10 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-<!-- veiwport dla RWD, dopasowuje szerokośc strony do szerokości urządzenia -->
+<!-- viewport dla RWD, dopasowuje szerokośc strony do szerokości urządzenia -->
     <meta name="descripton" content="Strona o krzesłach">
        <title>Sit on our Chair</title>
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="./css/style.css">
+    <script src="https://code.jquery.com/jquery-3.0.0.min.js"> </script>
+    <script src="./js/app.js"></script>
+	<script src="./jQ/appjQ.js"></script>
 </head>
 <body>
 
@@ -19,7 +22,7 @@
 					<a href="#"> Sit <span class="green-word">on</span> chair </a>
 					</h1>
 					<ol>
-						<li><a href="http://coderslab.pl"> O firmie </a>
+						<li><a href="#prices"> Cennik </a>
 							<ul>
 								<div class="nav-rectangle-bg">
 									<div class="nav-rectangle"></div>
@@ -29,7 +32,7 @@
 								<li><a href="http://coderslab.pl"> Historia </a></li>
 							</ul>
 						</li>
-						<li><a href="http://coderslab.pl"> Galeria </a>
+						<li><a href="#application"> Zamówienia </a>
 							<ul>
 								<div class="nav-rectangle-bg">
 									<div class="nav-rectangle"></div>
@@ -39,7 +42,7 @@
 								<li><a href="http://coderslab.pl"> Historia </a></li>
 							</ul>
 						</li>
-						<li><a href="http://coderslab.pl"> Kontakt </a>
+						<li><a href="#contact"> Kontakt </a>
 							<ul>
 								<div class="nav-rectangle-bg">
 									<div class="nav-rectangle"></div>
@@ -218,11 +221,8 @@
 		</div>
 	</section>
 
-
-
-
 <!-- ===== Section Buy Chair Form ===== -->
-	<section class="application ">
+	<section id="application">
     	<div class="container">
 				<div class="row">
 					<div>
@@ -268,13 +268,11 @@
 			                    <input type="checkbox" id="transport">
 			                    <label for="transport">Transport</label>
 			                </div>
-			                <!--<div class="checkbox"></div>-->
-			                <!--<span class="list_label inline_text">Transport</span>-->
 			            </div>
 			        </div>
 
-			        <div class="float-col-3 float-col-3-center image_part">
-			            <img src="images/red_chair.png">
+					<div class="float-col-3 float-col-3-center image_part">
+						<img src="images/selena_red.png">
 			        </div>
 
 			        <div class="float-col-3 summary_part">
@@ -301,12 +299,6 @@
 	    		</div>
 		</div>
 	</section>
-
-
-
-
-
-
 
 <!-- ===== Section Contact ===== -->
 	<section id="contact">
@@ -365,6 +357,5 @@
 			</div>
 		</div>
 	</footer>
-	<script src="js/app.js"> </script>
 </body>
 </html>

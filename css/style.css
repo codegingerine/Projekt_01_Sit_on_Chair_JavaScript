@@ -89,11 +89,11 @@ nav {
 	background: linear-gradient(to bottom, rgba(255,255,255,1) 0%, rgba(255,255,255,1) 6%, rgba(246,246,246,1) 63%, rgba(189,189,189,1) 100%);
 }
 /*--- Sections all - width ---*/
-#offer, #prices, .application, #contact {
+#offer, #prices, #application, #contact {
 	width: 100%;
 }
 /*--- Sections grey background  ---*/
-#prices, .application {
+#prices, #application {
 	background-color: #f1f1f1;
 	padding-top: 30px;
 	padding-bottom: 30px;
@@ -169,16 +169,6 @@ button {
 button:hover {
 	text-decoration: underline;
 }
-/*.forms-box {
-	width: 95%;
-	height: 55px;
-	font-size: 21px;
-	border: 1px solid #24baa0;
-}
-.forms-content {
-	margin-bottom: 20px;
-	padding-left: 20px;
-}*/
 
 /*===== Section Nav =====*/
 
@@ -436,7 +426,7 @@ nav ol > li > ul > li {
 	}
 .prices-service >:nth-child(odd) {
 		background-color: #e4e4e4;
-	} /* child selector neccessary > or else all div's within the main contener are counted*/
+	} /* child selector neccessary > or else all div's within the main container are counted*/
 #prices button {
 	width: 117px;
 	height: 36px;
@@ -483,6 +473,7 @@ nav ol > li > ul > li {
 }
 
 /*===== Section Form Chair Choice =====*/
+/* task - css form styling without using select*/
 
 /*--- Titles ---*/
 .title-left {
@@ -508,7 +499,7 @@ nav ol > li > ul > li {
 /* checkbox */
 .checkbox {
 	position: relative;
-	padding: 30px 30px 30px 0;
+	padding: 30px 30px 0 0;
 }
 .checkbox input {
 	display: block;
@@ -547,23 +538,11 @@ nav ol > li > ul > li {
 .checkbox input:checked + label::after {
 	display: block;
 }
-/*.active {
-	background: url('../images/form_ok.jpg');
-	width: 48px;
-	height: 40px;
-}
-.inline_text {
-	display: inline-block;
-	width: 228px;
-	vertical-align: top;
-	margin-top: 30px;
-	margin-left: 15px;
-	color: #aeaeae;
-}
 .image_part img{
-	margin-top: 44px;
+	position: relative;
+	left: -14px;
+	top: -29px;
 }
-*/
 .summary_panel {
 	background-color: white;
 	width:100%;
@@ -657,9 +636,13 @@ nav ol > li > ul > li {
 	cursor: pointer;
 	font-size: 16px;
 }
-/*.title {
-	height: 30px;
-}*/
+/* JS toggle class*/
+.show {
+	display: block;
+}
+.hide {
+	display: none;
+}
 
 /*===== Section Contact =====*/
 
